@@ -110,7 +110,7 @@ class OpStudent(models.Model):
         for record in self:
             if not record.user_id:
                 user_id = users_res.create({
-                    'name': record.name,
+                    'name': record.name + record.last_name,
                     'partner_id': record.partner_id.id,
                     'login': record.email,
                     'groups_id': user_group,
